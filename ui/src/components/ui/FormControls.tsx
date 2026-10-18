@@ -74,3 +74,50 @@ export const FormCheckbox = forwardRef<HTMLInputElement, CheckboxProps>(
   }
 );
 FormCheckbox.displayName = 'FormCheckbox';
+
+export const FormTextArea = forwardRef<HTMLTextAreaElement, React.TextareaHTMLAttributes<HTMLTextAreaElement> & { label: string; error?: { message?: string } }>(
+  ({ label, error, className = '', ...props }, ref) => {
+    return (
+      <div className="flex flex-col w-full">
+        <label className="block text-slate-400 mb-1.5 text-xs font-medium">{label}</label>
+        <textarea
+          ref={ref}
+          className={`w-full bg-[#070b15] border ${error ? 'border-red-500' : 'border-slate-800'} rounded-lg px-3 py-2.5 text-slate-200 text-sm shadow-neo-inner focus:outline-none focus:border-cyan-500 transition-colors min-h-[100px] ${className}`}
+          {...props}
+        />
+        {error?.message && <span className="text-red-400 text-[10px] mt-1.5 font-medium tracking-wide">{error.message}</span>}
+      </div>
+    );
+  }
+);
+FormTextArea.displayName = 'FormTextArea';
+
+interface MultiSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  label: string;
+  options: { label: string; value: string }[];
+  error?: { message?: string };
+}
+
+export const FormMultiSelect = forwardRef<HTMLSelectElement, MultiSelectProps>(
+  ({ label, options, error, className = '', ...props }, ref) => {
+    return (
+      <div className="flex flex-col w-full">
+        <label className="block text-slate-400 mb-1.5 text-xs font-medium">
+          {label} <span className="text-[10px] text-slate-500 font-normal tracking-wide ml-2">(Hold Ctrl/Cmd to select multiple)</span>
+        </label>
+        <select
+          multiple
+          ref={ref}
+          className={`w-full bg-[#070b15] border ${error ? 'border-red-500' : 'border-slate-800'} rounded-lg px-3 py-2.5 text-slate-200 text-sm shadow-neo-inner focus:outline-none focus:border-cyan-500 transition-colors h-32 ${className}`}
+          {...props}
+        >
+          {options.map((opt) => (
+            <option key={opt.value} value={opt.value} className="py-1.5 px-2 hover:bg-slate-800 cursor-pointer rounded mb-0.5">{opt.label}</option>
+          ))}
+        </select>
+        {error?.message && <span className="text-red-400 text-[10px] mt-1.5 font-medium tracking-wide">{error.message}</span>}
+      </div>
+    );
+  }
+);
+FormMultiSelect.displayName = 'FormMultiSelect';
