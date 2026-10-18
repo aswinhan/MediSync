@@ -1,0 +1,47 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/MediSync.Host/MediSync.Host.csproj" Id="bd391cb7-c5f1-48fc-90f6-d94029a6fd85" />
+  </Folder>
+  <Folder Name="/src/Common/">
+    <Project Path="src/Common/Modules.Common.API/Modules.Common.API.csproj" Id="fe7dee11-1f91-47ad-95e9-350bd3398fad" />
+    <Project Path="src/Common/Modules.Common.Application/Modules.Common.Application.csproj" Id="ed7ba07b-8733-46c9-a27c-c9bcaf407204" />
+    <Project Path="src/Common/Modules.Common.Domain/Modules.Common.Domain.csproj" Id="2766a6c6-124d-4c8a-ad93-7b2f4da86598" />
+    <Project Path="src/Common/Modules.Common.Infrastructure/Modules.Common.Infrastructure.csproj" Id="1b5c2a9f-753e-4cfe-b567-89f3dd050108" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Documents/">
+    <Project Path="src/Modules/Documents/Modules.Documents.Domain/Modules.Documents.Domain.csproj" Id="2965270f-6a9f-42c0-ba19-aa66ef04e9f9" />
+    <Project Path="src/Modules/Documents/Modules.Documents.Features/Modules.Documents.Features.csproj" Id="768558d1-1b60-4916-be73-f7e184e6797a" />
+    <Project Path="src/Modules/Documents/Modules.Documents.Infrastructure/Modules.Documents.Infrastructure.csproj" Id="78b027a2-7e77-4373-b183-c305decb9150" />
+    <Project Path="src/Modules/Documents/Modules.Documents.PublicApi/Modules.Documents.PublicApi.csproj" Id="cdf4a43e-1ce0-487d-a7b1-7dad15fe74a9" />
+  </Folder>
+  <Folder Name="/src/Modules/Organization/">
+    <Project Path="src/Modules/Organization/Modules.Organization.Domain/Modules.Organization.Domain.csproj" Id="abe7cdd8-4edf-48a9-8721-e7f674e21397" />
+    <Project Path="src/Modules/Organization/Modules.Organization.Features/Modules.Organization.Features.csproj" Id="8e72cf57-d8b6-45d6-9b17-32328a60e223" />
+    <Project Path="src/Modules/Organization/Modules.Organization.Infrastructure/Modules.Organization.Infrastructure.csproj" Id="2f35b8fd-6889-4267-b0dc-abe3fcbf6b75" />
+    <Project Path="src/Modules/Organization/Modules.Organization.PublicApi/Modules.Organization.PublicApi.csproj" Id="7b77466f-0ea4-497e-95c4-6079cd914621" />
+  </Folder>
+  <Folder Name="/src/Modules/Practitioner/">
+    <Project Path="src/Modules/Practitioner/Modules.Practitioner.Domain/Modules.Practitioner.Domain.csproj" Id="e1775eb2-4950-4da9-8a79-6b4f2d58d6ee" />
+    <Project Path="src/Modules/Practitioner/Modules.Practitioner.Features/Modules.Practitioner.Features.csproj" Id="2002b540-d41f-40df-9476-273762bafa67" />
+    <Project Path="src/Modules/Practitioner/Modules.Practitioner.Infrastructure/Modules.Practitioner.Infrastructure.csproj" Id="20bc7f6e-a657-4a20-8475-bdc63ba9c993" />
+    <Project Path="src/Modules/Practitioner/Modules.Practitioner.PublicApi/Modules.Practitioner.PublicApi.csproj" Id="524b7792-02dd-46fa-87ff-08886e4055df" />
+  </Folder>
+  <Folder Name="/src/Modules/SalesforceIntegration/">
+    <Project Path="src/Modules/SalesforceIntegration/Modules.Salesforce.Domain/Modules.Salesforce.Domain.csproj" Id="dda6adbf-72bb-417c-b15c-c2952863fdda" />
+    <Project Path="src/Modules/SalesforceIntegration/Modules.Salesforce.Features/Modules.Salesforce.Features.csproj" Id="40928f39-66aa-462a-816f-3c67c47186b6" />
+    <Project Path="src/Modules/SalesforceIntegration/Modules.Salesforce.Infrastructure/Modules.Salesforce.Infrastructure.csproj" Id="eba50d50-b85f-4f9c-beda-6fe6f2f5cc80" />
+    <Project Path="src/Modules/SalesforceIntegration/Modules.Salesforce.PublicApi/Modules.Salesforce.PublicApi.csproj" Id="cc431ce3-cce5-46ae-9a29-fa7bda0078df" />
+  </Folder>
+  <Folder Name="/src/Modules/Submissions/">
+    <Project Path="src/Modules/Submissions/Modules.Submissions.Domain/Modules.Submissions.Domain.csproj" Id="457ff13d-5eec-43bc-8f4a-67404d93c10c" />
+    <Project Path="src/Modules/Submissions/Modules.Submissions.Features/Modules.Submissions.Features.csproj" Id="bd584a50-8d5f-4ddb-b7e8-841098753022" />
+    <Project Path="src/Modules/Submissions/Modules.Submissions.Infrastructure/Modules.Submissions.Infrastructure.csproj" Id="a508a18e-4603-488c-89f0-2a7129a6625c" />
+    <Project Path="src/Modules/Submissions/Modules.Submissions.PublicApi/Modules.Submissions.PublicApi.csproj" Id="caa72dea-d1f3-4d38-bdf4-b9d4f2673e36" />
+  </Folder>
+  <Folder Name="/ui/" />
+</Solution>
