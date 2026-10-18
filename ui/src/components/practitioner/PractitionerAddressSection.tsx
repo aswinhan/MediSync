@@ -10,10 +10,10 @@ export function PractitionerAddressSection() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       
       {/* Office Address Panel */}
-      <div className="bg-[#131c31] border border-slate-800/80 rounded-xl p-6 shadow-neo-drop flex flex-col gap-4">
-        <div className="flex items-center space-x-2 border-b border-slate-800 pb-2 mb-2">
+      <div className="bg-surface-panel border border-border-subtle rounded-xl p-6 shadow-neo-drop flex flex-col gap-4">
+        <div className="flex items-center space-x-2 border-b border-border-subtle pb-2 mb-2">
           <MapPin className="w-4 h-4 text-cyan-400" />
-          <h2 className="text-sm font-bold tracking-wider text-slate-300 uppercase">Office Address</h2>
+          <h2 className="text-sm font-bold tracking-wider text-content-secondary uppercase">Office Address</h2>
         </div>
         
         <FormInput label="Street 1 *" maxLength={255} {...register("officeStreet1")} error={errors.officeStreet1} />
@@ -31,10 +31,10 @@ export function PractitionerAddressSection() {
       </div>
 
       {/* Home Address Panel */}
-      <div className="bg-[#131c31] border border-slate-800/80 rounded-xl p-6 shadow-neo-drop flex flex-col gap-4">
-        <div className="flex items-center space-x-2 border-b border-slate-800 pb-2 mb-2">
+      <div className="bg-surface-panel border border-border-subtle rounded-xl p-6 shadow-neo-drop flex flex-col gap-4">
+        <div className="flex items-center space-x-2 border-b border-border-subtle pb-2 mb-2">
           <Home className="w-4 h-4 text-cyan-400" />
-          <h2 className="text-sm font-bold tracking-wider text-slate-300 uppercase">Home Address</h2>
+          <h2 className="text-sm font-bold tracking-wider text-content-secondary uppercase">Home Address</h2>
         </div>
         
         <FormInput label="Street 1 *" maxLength={255} {...register("homeStreet1")} error={errors.homeStreet1} />

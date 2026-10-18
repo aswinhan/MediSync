@@ -1,7 +1,12 @@
 import { FormProvider } from 'react-hook-form';
-import { ShieldCheck } from 'lucide-react';
 import type { PractitionerFormValues } from './schema';
 import { usePractitionerForm } from './usePractitionerForm';
+
+// Layout Components
+import { Sidebar } from '../../components/layout/Sidebar';
+import { TopHeader } from '../../components/layout/TopHeader';
+
+// Left Column Sections (Practitioner Form)
 import { PractitionerInfoSection } from '../../components/practitioner/PractitionerInfoSection';
 import { PractitionerAddressSection } from '../../components/practitioner/PractitionerAddressSection';
 import { PractitionerEducationSection } from '../../components/practitioner/PractitionerEducationSection';
@@ -11,6 +16,8 @@ import { PractitionerLicenseSection } from '../../components/practitioner/Practi
 import { PractitionerProfessionalBackgroundSection } from '../../components/practitioner/PractitionerProfessionalBackgroundSection';
 import { PractitionerWorkHistorySection } from '../../components/practitioner/PractitionerWorkHistorySection';
 import { PractitionerAttestationsSection } from '../../components/practitioner/PractitionerAttestationsSection';
+
+// Right Column Sections (PSV & Document Verification)
 import { PractitionerPsvSection } from '../../components/practitioner/PractitionerPsvSection';
 import { PractitionerProviderVerificationSection } from '../../components/practitioner/PractitionerProviderVerificationSection';
 
@@ -23,41 +30,57 @@ export function PractitionerWorkspace() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0b1120] text-slate-200 font-sans p-6 pb-20">
-      <header className="flex items-center space-x-3 bg-[#131c31] border border-slate-800 rounded-xl px-6 py-4 mb-6 shadow-neo-drop">
-        <div className="bg-cyan-500/10 p-2 rounded-lg border border-cyan-500/20 text-cyan-400">
-          <ShieldCheck className="w-6 h-6" />
-        </div>
-        <div>
-          <h1 className="text-lg font-semibold tracking-wide text-white">MEDISYNC</h1>
-          <p className="text-xs text-slate-400">Individual Practitioner Credentialing Application</p>
-        </div>
-      </header>
+    <div className="flex h-screen bg-surface-base text-content-primary font-sans overflow-hidden">
+      
+      {/* 1. Left Sidebar Navigation */}
+      <Sidebar />
 
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)} className="max-w-4xl mx-auto space-y-6">
+      {/* 2. Main Workspace Area */}
+      <div className="flex-1 flex flex-col overflow-hidden relative">
+        <FormProvider {...methods}>
           
-          <PractitionerInfoSection />
-          <PractitionerAddressSection />
-          <PractitionerEducationSection />
-          <PractitionerMedicalTrainingSection />
-          <PractitionerHospitalAffiliationsSection />
-          <PractitionerLicenseSection />
-          <PractitionerProfessionalBackgroundSection />
-          <PractitionerWorkHistorySection />
-          <PractitionerAttestationsSection />
-          <PractitionerPsvSection />
-          <PractitionerProviderVerificationSection />
-          <div className="flex justify-end pt-4 sticky bottom-6 z-10">
-            <button
-              type="submit"
-              className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold py-3 px-8 rounded-xl shadow-glow transition-all text-sm uppercase tracking-widest border border-cyan-400/30"
-            >
-              Simulate Submit
-            </button>
-          </div>
-        </form>
-      </FormProvider>
+          {/* 3. Global Header (Inside FormProvider to access Status/Dates) */}
+          <TopHeader />
+
+          {/* 4. Scrollable Form Content Container */}
+          <main className="flex-1 overflow-y-auto p-4 lg:p-8">
+            <form onSubmit={methods.handleSubmit(onSubmit)} className="grid grid-cols-1 xl:grid-cols-12 gap-8 max-w-[1600px] mx-auto pb-24">
+              
+              {/* LEFT COLUMN: Practitioner Data (7 Columns Wide) */}
+              <div className="xl:col-span-7 space-y-6">
+                <PractitionerInfoSection />
+                <PractitionerAddressSection />
+                
+                {/* Grouped sections for a tighter layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <PractitionerEducationSection />
+                  <PractitionerMedicalTrainingSection />
+                </div>
+                
+                <PractitionerHospitalAffiliationsSection />
+                <PractitionerLicenseSection />
+                <PractitionerProfessionalBackgroundSection />
+                <PractitionerWorkHistorySection />
+                <PractitionerAttestationsSection />
+                
+                <div className="flex justify-center pt-6">
+                  <button type="submit" className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-content-primary font-bold py-3.5 px-12 rounded-full shadow-glow text-sm uppercase tracking-wider hover:scale-105 transition-transform">
+                    Submit Application
+                  </button>
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN: PSV & Auditing (5 Columns Wide) */}
+              <div className="xl:col-span-5 space-y-6">
+                <PractitionerPsvSection />
+                <PractitionerProviderVerificationSection />
+              </div>
+
+            </form>
+          </main>
+
+        </FormProvider>
+      </div>
     </div>
   );
 }

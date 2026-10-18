@@ -19,17 +19,17 @@ export function PractitionerLicenseSection() {
   const boardType = watch('boardCertification');
 
   return (
-    <div className="bg-[#131c31] border border-slate-800/80 rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
-      <div className="flex items-center space-x-2 border-b border-slate-800 pb-2">
+    <div className="bg-surface-panel border border-border-subtle rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
+      <div className="flex items-center space-x-2 border-b border-border-subtle pb-2">
         <Award className="w-4 h-4 text-cyan-400" />
-        <h2 className="text-sm font-bold tracking-wider text-slate-300 uppercase">Practitioner License / Certification</h2>
+        <h2 className="text-sm font-bold tracking-wider text-content-secondary uppercase">Practitioner License / Certification</h2>
       </div>
 
-      <div className="p-4 bg-[#070b15] rounded-xl border border-slate-800 shadow-neo-inner">
+      <div className="p-4 bg-surface-input rounded-xl border border-border-subtle shadow-neo-inner">
         <FormCheckbox label="Add License / Certification Record" {...register("addLicenseCertificationRecord")} />
         
         {addLicenseRecord && (
-          <div className="mt-5 pt-5 border-t border-slate-800 grid grid-cols-1 gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="mt-5 pt-5 border-t border-border-subtle grid grid-cols-1 gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
             
             {/* Top Row: Type Selection */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -48,7 +48,7 @@ export function PractitionerLicenseSection() {
             </div>
 
             {/* Dynamic Rendering based on Type Selection */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#131c31] p-4 rounded-lg border border-slate-800">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface-panel p-4 rounded-lg border border-border-subtle">
               
               {/* Branch 1: LARA License */}
               {type === 'License' && (

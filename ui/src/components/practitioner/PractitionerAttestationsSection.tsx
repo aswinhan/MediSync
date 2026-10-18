@@ -14,10 +14,10 @@ export function PractitionerAttestationsSection() {
   const lossOfPrivileges = watch('lossOfPrivileges');
 
   return (
-    <div className="bg-[#131c31] border border-slate-800/80 rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
-      <div className="flex items-center space-x-2 border-b border-slate-800 pb-2">
+    <div className="bg-surface-panel border border-border-subtle rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
+      <div className="flex items-center space-x-2 border-b border-border-subtle pb-2">
         <ShieldAlert className="w-4 h-4 text-cyan-400" />
-        <h2 className="text-sm font-bold tracking-wider text-slate-300 uppercase">Acknowledgements & Attestations</h2>
+        <h2 className="text-sm font-bold tracking-wider text-content-secondary uppercase">Acknowledgements & Attestations</h2>
       </div>
 
       <div className="p-4 bg-amber-950/20 border border-amber-900/50 rounded-xl shadow-neo-inner">
@@ -89,7 +89,7 @@ export function PractitionerAttestationsSection() {
 
       </div>
 
-      <div className="border-t border-slate-800 pt-6 mt-4 flex items-end space-x-4">
+      <div className="border-t border-border-subtle pt-6 mt-4 flex items-end space-x-4">
         <div className="bg-cyan-500/10 p-3 rounded-lg border border-cyan-500/20 text-cyan-400">
           <FileSignature className="w-6 h-6" />
         </div>

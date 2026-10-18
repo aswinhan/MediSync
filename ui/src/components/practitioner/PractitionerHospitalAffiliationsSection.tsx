@@ -10,17 +10,17 @@ export function PractitionerHospitalAffiliationsSection() {
   const isAffiliationCurrent = watch('isAffiliationCurrent');
 
   return (
-    <div className="bg-[#131c31] border border-slate-800/80 rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
-      <div className="flex items-center space-x-2 border-b border-slate-800 pb-2">
+    <div className="bg-surface-panel border border-border-subtle rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
+      <div className="flex items-center space-x-2 border-b border-border-subtle pb-2">
         <Building2 className="w-4 h-4 text-cyan-400" />
-        <h2 className="text-sm font-bold tracking-wider text-slate-300 uppercase">Hospital Affiliations</h2>
+        <h2 className="text-sm font-bold tracking-wider text-content-secondary uppercase">Hospital Affiliations</h2>
       </div>
 
-      <div className="p-4 bg-[#070b15] rounded-xl border border-slate-800 shadow-neo-inner">
+      <div className="p-4 bg-surface-input rounded-xl border border-border-subtle shadow-neo-inner">
         <FormCheckbox label="Add Hospital Affiliation Record" {...register("addHospitalAffiliationRecord")} />
         
         {addHospitalAffiliationRecord && (
-          <div className="mt-5 pt-5 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="mt-5 pt-5 border-t border-border-subtle grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
             <div className="space-y-4">
               <FormInput label="Hospital Affiliation Name *" maxLength={255} {...register("hospitalAffiliationName")} error={errors.hospitalAffiliationName} />
               <FormInput label="Hospital Affiliation Address *" maxLength={255} {...register("hospitalAffiliationAddress")} error={errors.hospitalAffiliationAddress} />
@@ -30,7 +30,7 @@ export function PractitionerHospitalAffiliationsSection() {
             <div className="space-y-4">
               <FormInput label="Start Date of Affiliation *" type="date" {...register("startDateOfAffiliation")} error={errors.startDateOfAffiliation} />
               
-              <div className="p-3 bg-[#131c31] rounded-lg border border-slate-800 mt-2">
+              <div className="p-3 bg-surface-panel rounded-lg border border-border-subtle mt-2">
                 <FormCheckbox label="Is this affiliation current?" {...register("isAffiliationCurrent")} />
               </div>
               

@@ -9,14 +9,14 @@ export function PractitionerWorkHistorySection() {
   const sixMonthGap = watch('sixMonthGap');
 
   return (
-    <div className="bg-[#131c31] border border-slate-800/80 rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
-      <div className="flex items-center space-x-2 border-b border-slate-800 pb-2">
+    <div className="bg-surface-panel border border-border-subtle rounded-xl p-6 shadow-neo-drop flex flex-col gap-6">
+      <div className="flex items-center space-x-2 border-b border-border-subtle pb-2">
         <Clock className="w-4 h-4 text-cyan-400" />
-        <h2 className="text-sm font-bold tracking-wider text-slate-300 uppercase">Work History</h2>
+        <h2 className="text-sm font-bold tracking-wider text-content-secondary uppercase">Work History</h2>
       </div>
 
       <div className="space-y-6">
-        <div className="p-4 bg-[#070b15] rounded-xl border border-slate-800 shadow-neo-inner">
+        <div className="p-4 bg-surface-input rounded-xl border border-border-subtle shadow-neo-inner">
           <FormCheckbox label="I can provide a resume with a five-year work history *" {...register("fiveYearWorkHistory")} error={errors.fiveYearWorkHistory} />
           <p className="text-[10px] text-slate-500 ml-7 mt-1 tracking-wide">Please provide a resume with five years of work history via document upload.</p>
         </div>
@@ -26,7 +26,7 @@ export function PractitionerWorkHistorySection() {
         </div>
 
         {sixMonthGap === 'Yes' && (
-          <div className="p-5 bg-[#070b15] rounded-xl border border-slate-800 shadow-neo-inner grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="p-5 bg-surface-input rounded-xl border border-border-subtle shadow-neo-inner grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <FormInput label="Gap Start Date *" type="date" {...register("sixMonthGapStartDate")} error={errors.sixMonthGapStartDate} />

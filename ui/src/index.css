@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+/* 1. Tell Tailwind v4 about our custom colors and shadows */
+@theme {
+  --color-surface-base: var(--surface-base);
+  --color-surface-panel: var(--surface-panel);
+  --color-surface-input: var(--surface-input);
+  --color-surface-muted: var(--surface-muted);
+  
+  --color-content-primary: var(--text-primary);
+  --color-content-secondary: var(--text-secondary);
+  --color-content-muted: var(--text-muted);
+  
+  --color-border-subtle: var(--border-subtle);
+
+  --shadow-neo-drop: var(--shadow-neo-drop);
+  --shadow-neo-inner: var(--shadow-neo-inner);
+  --shadow-glow: 0 0 15px rgba(6, 182, 212, 0.5);
+}
+
+/* 2. Light Theme Variables (Default) */
+:root {
+  --surface-base: #f1f5f9;
+  --surface-panel: #ffffff;
+  --surface-input: #f8fafc;
+  --surface-muted: #e2e8f0;
+  
+  --border-subtle: #cbd5e1;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --shadow-neo-drop: 5px 5px 15px rgba(0, 0, 0, 0.05), -5px -5px 15px rgba(255, 255, 255, 0.8);
+  --shadow-neo-inner: inset 2px 2px 5px rgba(0, 0, 0, 0.05), inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* 3. Dark Theme Variables (Applied when Moon icon is active) */
+:root.dark {
+  --surface-base: #0b1120;
+  --surface-panel: #131c31;
+  --surface-input: #070b15;
+  --surface-muted: #0a0f18;
+  
+  --border-subtle: rgba(30, 41, 59, 0.8);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --shadow-neo-drop: 5px 5px 10px rgba(0, 0, 0, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.02);
+  --shadow-neo-inner: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.05);
+}
+
+/* 4. Global Smooth Transitions for Theme Swapping */
+body, div, header, aside, nav, input, select, textarea, button, p, span, h1, h2, h3 {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Ensure the document body takes on the base background */
+body {
+  background-color: var(--surface-base);
+  color: var(--text-primary);
+}
